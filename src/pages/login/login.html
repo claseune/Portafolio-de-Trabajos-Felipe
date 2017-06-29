@@ -1,0 +1,32 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [(formGroup)]="data">
+    <ion-list>
+    <ion-item>
+      <ion-input formControlName="username" type="email" placeholder="E-mail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+    </ion-list>
+  </form>
+  <button ion-button block (click)="login()">
+  <ion-icon name="checkmark-circle-outline"></ion-icon>
+  </button>
+  <button class="buttonfb" (click)="LogFB()" ion-button block>
+  </button>
+</ion-content>

@@ -1,0 +1,68 @@
+<!--
+  Generated template for the DataPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Datos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [(formGroup)]="Inputs" #exampleForm="ngForm" name="input-form">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Nombre</ion-label>
+        <ion-input formControlName="name" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Edad</ion-label>
+        <ion-input formControlName="age" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: #f53d3d">Deporte</ion-label>
+        <ion-select formControlName="sport">
+          <ion-option value="Futbol">Futbol</ion-option>
+          <ion-option value="Basketbol">Basketbol</ion-option>
+          <ion-option value="Tennis">Tennis</ion-option>
+          <ion-option value="Natacion">Natacion</ion-option>
+          <ion-option value="ESports">ESports</ion-option>
+          <ion-option value="Nada">Nada</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <button ion-button (click)="Guardar()" color="secondary">Guardar</button>
+  </form>
+  <br>
+  <br>
+  <ion-list>
+  <ion-item-sliding *ngFor=" let record of records | async">
+    <button ion-item>
+      <ion-avatar item-start>
+        <img src="https://inomics.com/sites/default/files/pictures/picture-95970-1460131169.png">
+      </ion-avatar>
+      <h2>{{record.name}}</h2>
+      <h3>{{record.age}}</h3>
+      <h4>{{record.sport}}</h4>
+    </button>
+    <ion-item-options side="left">
+        <button ion-button color="navy" (click)="editar(record.$key)">
+          <ion-icon name="create"></ion-icon>
+          <label>Editar</label>
+        </button>
+    </ion-item-options>
+    <ion-item-options side="right">
+        <button ion-button color="maroon" (click)="delete(record.$key, record.name)">
+          <ion-icon name="trash"></ion-icon>
+          <label>Borrar</label>
+        </button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+</ion-content>

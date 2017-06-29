@@ -1,0 +1,36 @@
+<!--
+  Generated template for the GestosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Gestos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-slides pager>
+  <ion-slide style="background-color: #222" id="slide1">
+    <img id="Fb" src="http://www.midzu.it/images/fb.png" (swipe)="CambioF()">
+    <h2 style="color: #f4f4f4">Facebook</h2>
+  </ion-slide>
+  <ion-slide style="background-color: #222" id="slide2">
+    <img id="Twt" src="http://icons.iconarchive.com/icons/limav/flat-gradient-social/512/Twitter-icon.png" (press)="CambioT()">
+    <h2 style="color: #f4f4f4">Twitter</h2>
+  </ion-slide>
+  <ion-slide style="background-color: #222" id="slide3">
+    <img id="Google" src="http://www.wildsocialmedia.com/wp-content/uploads/2015/07/google-plus.png" (tap)="CambioG()">
+    <h2 style="color: #f4f4f4">Google</h2>
+  </ion-slide>
+  </ion-slides>
+  <ion-item>
+    <ion-label style="color: #111">Fondo</ion-label>
+    <ion-toggle [(ngModel)]="sausage" disabled="false" (checked)="CambioFondo()"></ion-toggle>
+  </ion-item>
+</ion-content>
+<footer>
+</footer>
